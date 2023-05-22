@@ -59,8 +59,10 @@ void saveJsonData(DynamicJsonDocument dataJson)
 
 void blink()
 {
-    digitalWrite(PIN_LED, HIGH);
-    delay(delayTime);
-    digitalWrite(PIN_LED, LOW);
-    delay(delayTime);
+    for (short int i = 0; i < 5; i++) {
+      digitalWrite(PIN_LED, HIGH);
+      delay(70);
+      digitalWrite(PIN_LED, LOW);
+      delay(80);
+    }
 }

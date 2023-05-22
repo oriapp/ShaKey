@@ -29,11 +29,11 @@ void setup() {
   // Log everything
   Serial.println("MAX JSON CAPACITY: " + String(dataJson.capacity()));
   Serial.println("[APP] Free memory: " + String(esp_get_free_heap_size()) + " bytes");
-  uint64_t chipId = ESP.getEfuseMac();
-  Serial.print("ESP Chip ID: " + chipId);
+  //uint64_t chipId = ESP.getEfuseMac();
+  // Serial.print("ESP Chip ID: " + chipId);
+  // Serial.print("ESP Chip ID: " + ESP.getEfuseMac());
 }
 
 void loop() {
   socket_looper();
-  blink();
 }

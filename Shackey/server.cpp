@@ -1,6 +1,7 @@
 #include "server.h"
+#include "fs.h"
 
-const char *ssid = "ESP32-SAD";
+const char *ssid = "YandL";
 const char *password = "12345678";
 
 WebSocketsServer webSocket = WebSocketsServer(80);
@@ -20,7 +21,7 @@ void server_init()
 
     // FOR DEBUG
     // ADD DEBUG VAR/ENV
-    timer.attach(1, sendHelloMessage);
+    timer.attach(10, sendHelloMessage);
 }
 
 void webSocketEvent(uint8_t num, WStype_t type, uint8_t *payload, size_t length)
@@ -43,7 +44,7 @@ void webSocketEvent(uint8_t num, WStype_t type, uint8_t *payload, size_t length)
         Serial.printf("[%u] Received text: %s\n", num, payload);
 
         // Echo back the received message to the client
-        webSocket.sendTXT(num, payload, length);
+        // webSocket.sendTXT(num, payload, length);
         break;
     }
 }
@@ -55,5 +56,6 @@ void socket_looper()
 
 void sendHelloMessage()
 {
+    blink();
     webSocket.broadcastTXT("Hello");
 }
