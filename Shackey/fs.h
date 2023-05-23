@@ -9,9 +9,9 @@
 
 
 void fs_init();
-void loadJsonData(DynamicJsonDocument dataJson);
-void saveJsonData(DynamicJsonDocument dataJson);
+void loadJsonData(DynamicJsonDocument& dataJson);
+void saveJsonData(const DynamicJsonDocument& dataJson);
 
-void blink();
+void blink(short int pin);
 
 #endif // !_FS_H

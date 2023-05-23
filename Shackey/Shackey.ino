@@ -6,7 +6,8 @@
 void setup() {
   Serial.begin(115200);
 
-  pinMode(PIN_LED, OUTPUT);
+  pinMode(PIN_LED_GREEN, OUTPUT);
+  pinMode(PING_LED_RED, OUTPUT);
 
   // Init
   fs_init();
