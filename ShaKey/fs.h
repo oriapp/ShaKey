@@ -6,11 +6,9 @@
 #include "fs.h"
 #include "Arduino.h"
 
-
-
 void fs_init();
-void loadJsonData(DynamicJsonDocument& dataJson);
-void saveJsonData(const DynamicJsonDocument& dataJson);
+void loadJsonData(DynamicJsonDocument &dataJson);
+void saveJsonData(const DynamicJsonDocument &dataJson);
 
 void blink(short int pin);
 

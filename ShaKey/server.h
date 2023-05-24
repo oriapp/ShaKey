@@ -9,10 +9,8 @@
 #define UNIQUE_ID_ADDRESS 0
 
 void server_init();
-void webSocketEvent(uint8_t num, WStype_t type, uint8_t* payload, size_t length);
+void webSocketEvent(uint8_t num, WStype_t type, uint8_t *payload, size_t length);
 void sendHelloMessage();
 void socket_looper();
-
-
 
 #endif // !_SERVER_H

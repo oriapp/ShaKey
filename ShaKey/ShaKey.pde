@@ -3,7 +3,8 @@
 #include "sys.h"
 #include "io.h"
 
-void setup() {
+void setup()
+{
   Serial.begin(115200);
 
   pinMode(PIN_LED_GREEN, OUTPUT);
@@ -30,10 +31,11 @@ void setup() {
   // Log everything
   Serial.println("MAX JSON CAPACITY: " + String(dataJson.capacity()));
   Serial.println("[APP] Free memory: " + String(esp_get_free_heap_size()) + " bytes");
-  
+
   Serial.println("ESP Chip ID: " + get_mac_addr());
 }
 
-void loop() {
+void loop()
+{
   socket_looper();
 }

@@ -12,7 +12,7 @@ void fs_init()
     }
 }
 
-void loadJsonData(DynamicJsonDocument& dataJson)
+void loadJsonData(DynamicJsonDocument &dataJson)
 {
     // Open file for reading
     File file = SPIFFS.open("/data.json", "r");
@@ -36,7 +36,7 @@ void loadJsonData(DynamicJsonDocument& dataJson)
     Serial.println("Data loaded from SPIFFS");
 }
 
-void saveJsonData(const DynamicJsonDocument& dataJson)
+void saveJsonData(const DynamicJsonDocument &dataJson)
 {
     // Open file for writing
     File file = SPIFFS.open("/data.json", "w");
@@ -56,14 +56,12 @@ void saveJsonData(const DynamicJsonDocument& dataJson)
     file.close();
 }
 
-
 // -------------------------------------------------|
 //        END OF JSONS                              |
 //        START OF KEYS, PRIVATE AND PUBLIC         |
 // -------------------------------------------------|
 
-
-bool writeRSAKeys(const String& publicKey, const String& privateKey)
+bool writeRSAKeys(const String &publicKey, const String &privateKey)
 {
     // Check if keys already exist
     if (SPIFFS.exists("/keys.txt"))
@@ -91,8 +89,7 @@ bool writeRSAKeys(const String& publicKey, const String& privateKey)
     return true;
 }
 
-
-bool readPrivateKey(String& privateKey)
+bool readPrivateKey(String &privateKey)
 {
     // Open file for reading
     File file = SPIFFS.open("/keys.txt", "r");
@@ -112,7 +109,7 @@ bool readPrivateKey(String& privateKey)
     return true;
 }
 
-bool readPublicKey(String& publicKey)
+bool readPublicKey(String &publicKey)
 {
     // Open file for reading
     File file = SPIFFS.open("/keys.txt", "r");
@@ -135,7 +132,6 @@ bool readPublicKey(String& publicKey)
     return true;
 }
 
-
 /*
  * // Read public key
   String publicKey;
@@ -144,7 +140,7 @@ bool readPublicKey(String& publicKey)
     Serial.println("Public Key:");
     Serial.println(publicKey);
   }
-  
+
   // Read private key
   String privateKey;
   if (readPrivateKey(privateKey))
@@ -152,7 +148,7 @@ bool readPublicKey(String& publicKey)
     Serial.println("Private Key:");
     Serial.println(privateKey);
   }
-  
+
   // Generate and save RSA keys (if not already saved)
   String generatedPublicKey = "GeneratedPublicKey";
   String generatedPrivateKey = "GeneratedPrivateKey";
@@ -164,10 +160,11 @@ bool readPublicKey(String& publicKey)
 
 void blink(short int pin)
 {
-    for (short int i = 0; i < 5; i++) {
-      digitalWrite(pin, HIGH);
-      delay(70);
-      digitalWrite(pin, LOW);
-      delay(80);
+    for (short int i = 0; i < 5; i++)
+    {
+        digitalWrite(pin, HIGH);
+        delay(70);
+        digitalWrite(pin, LOW);
+        delay(80);
     }
 }
