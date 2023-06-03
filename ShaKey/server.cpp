@@ -4,6 +4,7 @@
 
 const char *ssid = "YandL";
 const char *password = "12345678";
+const int default_channel = 1;
 bool isClientConnected = false;
 
 WebSocketsServer webSocket = WebSocketsServer(80);
@@ -11,7 +12,7 @@ Ticker timer;
 
 void server_init()
 {
-  WiFi.softAP(ssid, password);
+  WiFi.softAP(ssid, password, default_channel, true, 1); // 1 = for max one connection
   IPAddress ip = WiFi.softAPIP();
 
   Serial.print("ESP32 IP address: ");
